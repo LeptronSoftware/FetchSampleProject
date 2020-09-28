@@ -1,4 +1,4 @@
 # FetchSampleProject
 FetchSampleProject
 
-Sample is based on a Quiz application using LiveData and MVVM with Retrofit.
+Sample code for Fetch Rewards. Application is based on a Quiz application using LiveData and MVVM with Retrofit.
