@@ -17,7 +17,7 @@ interface QuestionHistoryDao {
      *
      * @return all tasks.
      */
-    @Query("SELECT * FROM question_history")
+    @Query("SELECT * FROM question_history order by question_list_id, question_text ")
     fun observeQuestions(): LiveData<List<QuestionHistory>>
 
     /**

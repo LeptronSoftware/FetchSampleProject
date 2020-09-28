@@ -30,7 +30,7 @@ class QuestionsRemoteRepository internal constructor(
     init {
 
         val retrofitCore = Retrofit.Builder()
-            .baseUrl("https://opentdb.com")
+            .baseUrl("https://fetch-hiring.s3.amazonaws.com")
             .client(defaultClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -38,38 +38,23 @@ class QuestionsRemoteRepository internal constructor(
         api = retrofitCore.create(QuestionsAPI::class.java)
 
     }
-    /*override fun observeQuestions(): LiveData<ResultWrapper<List<QuestionHistory>>>
-    {
-        TODO()
-    }
 
-    override suspend fun saveQuestion(questionHistory: QuestionHistory)
-    {
-        TODO()
-    }
-    override suspend fun deleteAllTasks()
-    {
-        TODO()
-    }
-    override suspend fun getQuestions(): ResultWrapper<List<QuestionHistory>>
-    {
-        TODO()
-    }*/
     override suspend fun refreshQuestions() {
-        val result = safeApiCall { api.getQuestions() }
+        val result = safeApiCall { api.getList() }
 
         when(result)
         {
             is ResultWrapper.Success->{
                 questionsLocal.deleteAllTasks()
-                result.value.results.forEach {qa ->
-                    questionsLocal.saveQuestion(QuestionHistory(StringUtils.unescapeHTML(qa.question,0), qa.correct_answer))
+                result.value.forEach {listItem ->
+                    if(!listItem.name.isNullOrEmpty())
+                        questionsLocal.saveQuestion(QuestionHistory(listItem.listId, StringUtils.unescapeHTML(listItem.name,0), "false"))
                 }
             }
             else->
             {
                //log an error
-
+                var foo =1
             }
         }
 

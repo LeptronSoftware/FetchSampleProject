@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "question_history")
 data class QuestionHistory @JvmOverloads constructor(
+    @ColumnInfo(name="question_list_id") var listID: Int = 0,
     @ColumnInfo(name="question_text") var questionText: String="",
     @ColumnInfo(name="question_correct_answer") var questionCorrectAnswer : String= "",
     @ColumnInfo(name="question_answer") var questionUserAnswer : String= "",

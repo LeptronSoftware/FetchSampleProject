@@ -32,7 +32,7 @@ class HomeViewModel(
                 }
             }
             //switch to the new live data list after each lambda function is executed, thus the name switchMap
-            questionLocalRepository.observeQuestions()
+            questionLocalRepository.observeQuestions().switchMap { filterResultsToLiveData(it) }
         }
 
 
@@ -43,16 +43,7 @@ class HomeViewModel(
     private val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean> = _dataLoading
 
-    private val _noTaskIconRes = MutableLiveData<Int>()
-    val noTaskIconRes: LiveData<Int> = _noTaskIconRes
 
-    private val _noTasksLabel = MutableLiveData<Int>()
-    val noTasksLabel: LiveData<Int> = _noTasksLabel
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
 
     init {
         // Set initial state
@@ -70,18 +61,18 @@ class HomeViewModel(
     val empty: LiveData<Boolean> = Transformations.map(_items) {
         it.isEmpty()
     }
-    private fun loadResultToLiveData(questionsResult:  List<QuestionHistory>): LiveData<List<QuestionHistory>> {
+    private fun filterResultsToLiveData(questionsResult:  List<QuestionHistory>): LiveData<List<QuestionHistory>> {
 
         val returnValue = MutableLiveData<List<QuestionHistory>>()
 
-        //if (questionsResult is ResultWrapper.Success) {
+       // if (questionsResult is ResultWrapper.Success) {
             returnValue.value =  questionsResult
 
-        //} else {
-           // returnValue.value = emptyList()
+        /*} else {
+            returnValue.value = emptyList()
             //showSnackbarMessage(R.string.loading_tasks_error)
             //TODO: show error mesage
-        //}
+        }*/
 
         return returnValue
     }

@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/open_sans_light"
-                android:text="@{String.valueOf(questionHistory.id)}"
+                android:text="@{String.valueOf(questionHistory.listID)}"
                 android:paddingTop="6dp"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
