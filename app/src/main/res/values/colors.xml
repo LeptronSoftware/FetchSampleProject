@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <drawable name="completedTaskBackground">#CCCCCC</drawable>
+
+    <drawable name="touchFeedback">#CFD8DC</drawable>
+
+    <color name="darkblue">#2596ac</color>
+    <color name="lightblue">#e2f1f4</color>
+
+
+
+    <color name="colorPrimaryLight">#1db3cf</color>
+
+
+    <color name="colorShadow">#e8e8e8</color>
+    <color name="colorGray">#cecdcd</color>
+    <color name="colorOrange">#e79445</color>
+    <color name="colorOrangeDark">#b06615</color>
+    <color name="colorOrangeLight">#ffc573</color>
+    <color name="colorLightBlue">#cfeaef</color>
+    <color name="colorLightBlueDark">#9eb8bd</color>
+    <color name="colorDarkBlue">#0C3940</color>
+    <color name="colorDarkBlue500">#00141a</color>
+    <color name="colorDarkBlue100">#3b636b</color>
+    <color name="colorDarkGray">#545454</color>
+    <color name="colorMediumGray">#848585</color>
+    <color name="colorGreen">#0fac16</color>
+    <color name="colorGreenDark">#007b00</color>
+    <color name="colorGreenLight">#5cdf4d</color>
+    <color name="colorMediumBlue">#82d0dc</color>
+    <color name="colorBlue">#56b5c7</color>
+    <color name="colorYellow">#e8ba1b</color>
+    <color name="colorRed">#ad0f0f</color>
+    <color name="colorRedDark">#840000</color>
+    <color name="colorRedLight">#f64d33</color>
+    <color name="colorGreen100">#94D95B</color>
+    <color name="colorGreen500">#399045</color>
+    <color name="colorOrange400">#EA8019</color>
+
+
+    // RangeSeekBar Colors
+    <color name="rsbColorSeekBarDefault">#c3c3c3</color>
+    <color name="rsbColorThumbPressed">#FFE7E7E7</color>
+    <color name="rsbColorThumbDefault">#FFFFFF</color>
+    <color name="rsbColorThumbBorder">#FFD7D7D7</color>
+</resources>
